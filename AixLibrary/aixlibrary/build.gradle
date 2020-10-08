@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 30
@@ -23,7 +24,22 @@ android {
         }
     }
 }
-
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.1'
+    }
+}
+publish {
+    userOrg = 'XianJie'
+    groupId = 'com.permissionx.aixlibrary'
+    artifactId = 'permissionx'
+    publishVersion = '1.0.0'
+    desc = 'Make Android runtime permission request easy.'
+    website = ''
+}
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
