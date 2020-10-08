@@ -1,2 +1,4 @@
+include ':Aix1Library'
+include ':AixLibrary:aixlibrary'
 include ':app'
 rootProject.name = "PermissionX"
